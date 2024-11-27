@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 3. Run the server:
 ```bash
-uvicorn main:app --reload
+uvicorn app:app --reload
 ```
 4. Access the API documentation at http://127.0.0.1:8000/docs
 
