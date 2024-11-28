@@ -33,8 +33,7 @@ def calculate_receipt_points(receipt: Receipt):
     # The result is the number of points earned.
     for item in receipt.items:
         if len(item.shortDescription.strip()) % 3 == 0:
-            price = round(float(item.price) * 0.2, 2)
-            points += math.ceil(price)
+            points += math.ceil(float(item.price) * 0.2)
 
     # 6 points if the day in the purchase date is odd.
     if int(receipt.purchaseDate.split('-')[-1]) % 2:
