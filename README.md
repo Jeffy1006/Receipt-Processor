@@ -85,4 +85,35 @@ docker run -d -p 8000:8000 jeffy1006/receipt-processor
     "points": 28 
   }
 ---
-
+## Example cURL Requests
+### 1. **Submit a Receipt**
+```bash
+curl -X POST "http://127.0.0.1:8000/receipts/process" \
+-H "Content-Type: application/json" \
+-d '{
+    "retailer": "M&M Corner Market",
+    "purchaseDate": "2022-03-20",
+    "purchaseTime": "14:33",
+    "items": [
+      {
+        "shortDescription": "Gatorade",
+        "price": "2.25"
+      },{
+        "shortDescription": "Gatorade",
+        "price": "2.25"
+      },{
+        "shortDescription": "Gatorade",
+        "price": "2.25"
+      },{
+        "shortDescription": "Gatorade",
+        "price": "2.25"
+      }
+    ],
+    "total": "9.00"
+  }'
+```
+### 2. **Get Points for a Receipt**
+```bash
+curl -X GET "http://127.0.0.1:8000/receipts/de947efd-14c5-4ff2-af34-8f973c3bd653/points"
+```
+---
